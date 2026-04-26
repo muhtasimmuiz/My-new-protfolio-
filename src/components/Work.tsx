@@ -29,13 +29,13 @@ const projects = [
   },
   {
     number: "03",
-    title: "Coming Soon",
-    category: "Upcoming build",
-    tools: "New ideas, cleaner systems, sharper execution",
+    title: "Muhtasim Portfolio",
+    category: "Personal website",
+    tools: "React, TypeScript, GSAP, responsive UI, custom motion",
     summary:
-      "A new project slot reserved for future work. Something original will land here once it is ready to be shared properly.",
-    image: "/images/placeholder.webp",
-    link: "",
+      "My personal portfolio website built to present my Web3 focus, project work, design direction, and a more polished identity across desktop and mobile.",
+    image: "/images/portfolio-preview.png",
+    link: "https://github.com/muhtasimmuiz/My-new-protfolio-",
   },
   {
     number: "04",
