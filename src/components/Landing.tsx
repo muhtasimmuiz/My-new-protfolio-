@@ -33,7 +33,7 @@ const Landing = () => {
           ease: "power3.out",
           stagger: 0.08,
           delay: 0.15,
-        }
+        },
       );
 
       if (avatarRef.current) {
@@ -48,7 +48,7 @@ const Landing = () => {
             duration: 1.2,
             ease: "power3.out",
             delay: 0.28,
-          }
+          },
         );
 
         gsap.to(avatarRef.current, {
@@ -145,9 +145,9 @@ const Landing = () => {
       </div>
       <div className="landing-container">
         <div className="landing-copy" ref={copyRef}>
-          <p className="landing-kicker">Web3 builder • researcher • product systems</p>
+          <p className="landing-kicker">Web3 builder - researcher - product systems</p>
           <div className="landing-intro">
-            <h2>Hello, I'm</h2>
+            <h2>Hello, I&apos;m</h2>
             <h1>
               MUHTASIM
               <br />
@@ -160,8 +160,9 @@ const Landing = () => {
             cinematic web experiences.
           </p>
           <p className="landing-note">
-            Currently building sharper interfaces for treasury control, wallet-aware
-            tooling, and decentralized systems that need clarity under pressure.
+            Currently building sharper interfaces for treasury control,
+            wallet-aware tooling, and decentralized systems that need clarity
+            under pressure.
           </p>
           <div className="landing-actions">
             <a href="#work" className="landing-button landing-button-primary">
@@ -187,10 +188,6 @@ const Landing = () => {
             <div>
               <span>Style</span>
               <strong>Privacy-first, high-trust systems</strong>
-            </div>
-            <div>
-              <span>Next step</span>
-              <strong>3D avatar upgrade coming</strong>
             </div>
           </div>
         </div>

@@ -123,6 +123,7 @@
   grid-template-columns: repeat(1, minmax(0, 1fr));
   gap: 12px;
   margin-top: 8px;
+  max-width: 520px;
 }
 .landing-stats div {
   padding: 14px 16px;
@@ -519,7 +520,7 @@ h2.landing-info-h2 {
 }
 @media screen and (min-width: 500px) {
   .landing-stats {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
   .landing-visual-caption {
     bottom: 12px;
@@ -529,15 +530,16 @@ h2.landing-info-h2 {
   .landing-section {
     min-height: 100svh;
     height: auto;
-    padding: 112px 0 48px;
+    padding: 88px 0 28px;
   }
   .landing-container {
     height: auto;
-    gap: 28px;
+    gap: 20px;
   }
   .landing-copy {
     padding-top: 0;
     padding-left: 0;
+    gap: 14px;
   }
   .landing-summary {
     font-size: 15px;
@@ -547,13 +549,16 @@ h2.landing-info-h2 {
     font-size: 13px;
   }
   .landing-actions {
-    gap: 10px;
+    gap: 8px;
   }
   .landing-button {
     width: 100%;
+    min-width: 0;
+    padding: 12px 18px;
   }
   .landing-stats {
     grid-template-columns: repeat(1, minmax(0, 1fr));
+    gap: 10px;
   }
   .landing-avatar-shell {
     width: min(100%, 400px);
@@ -571,7 +576,7 @@ h2.landing-info-h2 {
     position: relative;
     right: auto;
     bottom: auto;
-    margin-top: 14px;
+    margin-top: 10px;
     max-width: none;
   }
 }
