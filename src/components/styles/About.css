@@ -21,13 +21,14 @@
 .about-avatar-shell {
   position: relative;
   width: min(100%, 640px);
+  transform: translateX(-24px);
   animation: aboutFloat 5.2s ease-in-out infinite;
 }
 .about-avatar-image {
   position: relative;
   z-index: 2;
   display: block;
-  width: 100%;
+  width: 108%;
   height: auto;
   object-fit: contain;
   filter: saturate(1.04) contrast(1.02);
@@ -128,6 +129,7 @@
   }
   .about-avatar-shell {
     width: min(100%, 660px);
+    transform: translateX(-32px);
   }
   .about-me {
     padding: 0px;
