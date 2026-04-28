@@ -208,8 +208,8 @@ const Landing = () => {
             <div className="landing-avatar-glow"></div>
             <div className="landing-avatar-shine"></div>
             <img
-              src="/images/avatar-animated.gif"
-              alt="Muhtasim Muiz animated avatar"
+              src="/images/avatar-reference-v2.png"
+              alt="Muhtasim Muiz avatar"
               className="landing-avatar-image"
             />
           </div>
