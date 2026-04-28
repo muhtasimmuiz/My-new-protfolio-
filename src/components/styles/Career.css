@@ -41,6 +41,7 @@
   margin-bottom: 50px;
   gap: 40px;
   padding: 24px 0;
+  will-change: transform, opacity;
 }
 .career-info-box p {
   width: 40%;
@@ -92,6 +93,8 @@
     transparent 95%
   );
   max-height: 0%;
+  overflow: hidden;
+  will-change: max-height;
 }
 .career-dot {
   position: absolute;
