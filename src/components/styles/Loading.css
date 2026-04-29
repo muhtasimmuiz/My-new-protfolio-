@@ -107,42 +107,34 @@
   text-transform: uppercase;
   color: #f5fbff;
 }
-.loading-content-in {
+.loading-label {
   position: relative;
   width: var(--Lsize);
-  overflow: hidden;
-}
-.loading-content2 {
-  position: relative;
-  letter-spacing: 2px;
-  text-transform: uppercase;
-  width: var(--Lsize);
-  overflow: hidden;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
-  column-gap: 10px;
-  text-align: center;
-  transition: 1s;
-  max-width: var(--Lsize);
+  gap: 14px;
   color: #ffffff;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
 }
-.loading-clicked .loading-content2 {
-  opacity: 0;
-  transition: 0.5s;
+.loading-loading span,
+.loading-loading strong {
+  position: relative;
+  z-index: 2;
 }
-
-.loading-content span {
-  font-weight: 300;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translateY(-50%);
-  opacity: 0.78;
+.loading-loading strong {
+  font-weight: 400;
+  opacity: 0.8;
+}
+.loading-welcome {
+  justify-content: center;
+  letter-spacing: 0.18em;
+  animation: welcomePulse 0.7s ease-in-out 2 alternate;
 }
 .loading-box {
   position: absolute;
-  right: 0px;
+  right: -2px;
   top: 50%;
   transform: translate(100%, -50%);
   width: 15px;
@@ -166,28 +158,8 @@
   transition: 1s;
   transform: translateX(200px);
 }
-.loading-clicked .loading-content2 {
-  overflow: visible;
-}
-.loading-clicked .loading-content2 span {
-  transition: 1s;
-  transform: translateY(100px);
-  opacity: 0;
-}
-.loading-container {
-  position: absolute;
-  width: 100%;
-  max-width: var(--Lsize);
-  /* height: 45px; */
-  top: 50%;
-  transition: 1s;
-  left: 50px;
-  z-index: 9;
-  transform: translateY(-50%);
-}
-
-.loading-complete .loading-container {
-  max-width: 0px;
+.loading-welcome-phase .loading-hover {
+  opacity: 0.15;
 }
 .loading-header {
   width: var(--cWidth);
@@ -231,6 +203,16 @@
 @keyframes blinkDone {
   to {
     opacity: 0;
+  }
+}
+@keyframes welcomePulse {
+  from {
+    transform: scale(0.96);
+    opacity: 0.72;
+  }
+  to {
+    transform: scale(1);
+    opacity: 1;
   }
 }
 
@@ -350,9 +332,6 @@
     padding: 30px 70px;
     font-size: 25px;
   }
-  .loading-container {
-    left: 70px;
-  }
   .loading-marquee {
     font-size: 108px;
   }
@@ -380,9 +359,6 @@
   }
   .loading-wrap {
     --Lsize: 128px;
-  }
-  .loading-container {
-    left: 32px;
   }
   .loading-marquee {
     font-size: 34px;

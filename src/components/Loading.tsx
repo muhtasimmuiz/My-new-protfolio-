@@ -6,41 +6,39 @@ import Marquee from "react-fast-marquee";
 
 const Loading = ({ percent }: { percent: number }) => {
   const { setIsLoading } = useLoading();
-  const [loaded, setLoaded] = useState(false);
-  const [isLoaded, setIsLoaded] = useState(false);
-  const [clicked, setClicked] = useState(false);
+  const [phase, setPhase] = useState<"loading" | "welcome" | "exit">("loading");
 
   useEffect(() => {
-    if (percent < 100 || loaded) return;
+    if (percent < 100 || phase !== "loading") return;
 
-    const loadedTimer = window.setTimeout(() => {
-      setLoaded(true);
-    }, 600);
-    const completedTimer = window.setTimeout(() => {
-      setIsLoaded(true);
-    }, 1600);
+    const welcomeTimer = window.setTimeout(() => {
+      setPhase("welcome");
+    }, 320);
+    const exitTimer = window.setTimeout(() => {
+      setPhase("exit");
+    }, 1300);
+    const completeTimer = window.setTimeout(() => {
+      document.body.style.overflowY = "auto";
+      setIsLoading(false);
+    }, 2050);
 
     return () => {
-      window.clearTimeout(loadedTimer);
-      window.clearTimeout(completedTimer);
+      window.clearTimeout(welcomeTimer);
+      window.clearTimeout(exitTimer);
+      window.clearTimeout(completeTimer);
     };
-  }, [percent, loaded]);
+  }, [percent, phase, setIsLoading]);
 
   useEffect(() => {
-    import("./utils/initialFX").then((module) => {
-      if (isLoaded) {
-        setClicked(true);
-        setTimeout(() => {
-          if (module.initialFX) {
-            module.initialFX();
-          }
-          setIsLoading(false);
-        }, 900);
-      }
-    });
-  }, [isLoaded]);
+    document.body.style.overflowY = "hidden";
+    return () => {
+      document.body.style.overflowY = "auto";
+    };
+  }, []);
 
   function handleMouseMove(e: React.MouseEvent<HTMLElement>) {
+    if (phase !== "loading") return;
+
     const { currentTarget: target } = e;
     const rect = target.getBoundingClientRect();
     const x = e.clientX - rect.left;
@@ -55,7 +53,7 @@ const Loading = ({ percent }: { percent: number }) => {
         <a href="/#" className="loader-title" data-cursor="disable">
           Muhtasim Muiz
         </a>
-        <div className={`loaderGame ${clicked && "loader-out"}`}>
+        <div className={`loaderGame ${phase === "exit" ? "loader-out" : ""}`}>
           <div className="loaderGame-container">
             <div className="loaderGame-in">
               {[...Array(27)].map((_, index) => (
@@ -74,22 +72,22 @@ const Loading = ({ percent }: { percent: number }) => {
           </Marquee>
         </div>
         <div
-          className={`loading-wrap ${clicked && "loading-clicked"}`}
+          className={`loading-wrap ${phase === "exit" ? "loading-clicked" : ""} ${phase === "welcome" ? "loading-welcome-phase" : ""}`}
           onMouseMove={(e) => handleMouseMove(e)}
         >
           <div className="loading-hover"></div>
-          <div className={`loading-button ${loaded && "loading-complete"}`}>
-            <div className="loading-container">
-              <div className="loading-content">
-                <div className="loading-content-in">
-                  Loading <span>{percent}%</span>
-                </div>
+          <div className={`loading-button ${phase !== "loading" ? "loading-complete" : ""}`}>
+            {phase === "loading" ? (
+              <div className="loading-label loading-loading">
+                <span>Loading</span>
+                <strong>{percent}%</strong>
+                <div className="loading-box"></div>
               </div>
-              <div className="loading-box"></div>
-            </div>
-            <div className="loading-content2">
-              <span>Welcome</span>
-            </div>
+            ) : (
+              <div className="loading-label loading-welcome">
+                <span>Welcome</span>
+              </div>
+            )}
           </div>
         </div>
       </div>
