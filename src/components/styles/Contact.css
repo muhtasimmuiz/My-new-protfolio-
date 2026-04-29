@@ -1,11 +1,11 @@
 .contact-section {
   margin: auto;
-  padding-bottom: 48px;
-  margin-top: 40px;
+  padding-bottom: 36px;
+  margin-top: 28px;
 }
 .contact-section h3 {
-  font-size: 60px;
-  font-weight: 400;
+  font-size: 56px;
+  font-weight: 500;
   text-transform: uppercase;
   margin: 0;
 }
@@ -22,22 +22,29 @@
 .contact-box {
   display: flex;
   flex-direction: column;
-  gap: 6px;
+  gap: 8px;
   padding: 24px;
   border-radius: 24px;
   background: rgba(8, 15, 35, 0.52);
   border: 1px solid rgba(255, 255, 255, 0.08);
   backdrop-filter: blur(14px);
   min-height: 210px;
+  transition: transform 0.28s ease, border-color 0.28s ease, box-shadow 0.28s ease;
+}
+.contact-box:hover {
+  transform: translateY(-5px);
+  border-color: rgba(138, 216, 255, 0.16);
+  box-shadow: 0 24px 50px rgba(0, 0, 0, 0.16);
 }
 .contact-flex p {
-  margin-top: 10px;
-  margin-bottom: 20px;
+  margin-top: 8px;
+  margin-bottom: 18px;
   color: var(--textMuted);
   max-width: 320px;
+  line-height: 1.65;
 }
 a.contact-social {
-  font-size: 25px;
+  font-size: 23px;
   border-bottom: 1px solid rgba(255, 255, 255, 0.16);
   width: fit-content;
 }

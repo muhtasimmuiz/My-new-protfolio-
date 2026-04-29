@@ -23,7 +23,7 @@ const timelineEntries = [
   {
     role: "Product experiments",
     company: "ArcPay Treasury and SHELBY CONTROL ROOM",
-    year: "2025",
+    year: "2026",
     description:
       "Focused on concept-building through projects that combine interface design, monitoring workflows, treasury thinking, and operational clarity for high-trust systems.",
   },

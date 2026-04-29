@@ -13,7 +13,7 @@ const Loading = ({ percent }: { percent: number }) => {
 
     const welcomeTimer = window.setTimeout(() => {
       setPhase("welcome");
-    }, 320);
+    }, 180);
 
     return () => {
       window.clearTimeout(welcomeTimer);
@@ -25,20 +25,37 @@ const Loading = ({ percent }: { percent: number }) => {
 
     const exitTimer = window.setTimeout(() => {
       setPhase("exit");
-    }, 950);
-
-    const completeTimer = window.setTimeout(() => {
-      import("./utils/initialFX").then((module) => {
-        if (module.initialFX) {
-          module.initialFX();
-        }
-        document.body.style.overflowY = "auto";
-        setIsLoading(false);
-      });
-    }, 1700);
+    }, 520);
 
     return () => {
       window.clearTimeout(exitTimer);
+    };
+  }, [phase]);
+
+  useEffect(() => {
+    if (phase !== "exit") return;
+
+    const completeTimer = window.setTimeout(() => {
+      document.body.style.overflowY = "auto";
+      setIsLoading(false);
+
+      window.requestAnimationFrame(() => {
+        import("./utils/initialFX")
+          .then((module) => {
+            if (module.initialFX) {
+              module.initialFX();
+            }
+          })
+          .catch(() => {
+            const main = document.getElementsByTagName("main")[0];
+            if (main) {
+              main.classList.add("main-active");
+            }
+          });
+      });
+    }, 420);
+
+    return () => {
       window.clearTimeout(completeTimer);
     };
   }, [phase, setIsLoading]);
