@@ -144,8 +144,8 @@ const Landing = () => {
         <div className="landing-grid" ref={gridRef}></div>
       </div>
       <div className="landing-container">
+        <p className="landing-kicker">Web3 builder - researcher - product systems</p>
         <div className="landing-copy" ref={copyRef}>
-          <p className="landing-kicker">Web3 builder - researcher - product systems</p>
           <div className="landing-intro">
             <h2>Hello, I&apos;m</h2>
             <h1>
@@ -167,9 +167,6 @@ const Landing = () => {
           <div className="landing-actions">
             <a href="#work" className="landing-button landing-button-primary">
               View projects
-            </a>
-            <a href="#contact" className="landing-button landing-button-secondary">
-              Contact me
             </a>
             <a
               href="https://github.com/muhtasimmuiz"

@@ -64,6 +64,11 @@ a.contact-social {
   gap: 10px;
   opacity: 0.5;
 }
+.contact-box a,
+.contact-box p {
+  overflow-wrap: anywhere;
+  word-break: break-word;
+}
 @media only screen and (max-width: 1600px) {
   .contact-section h3 {
     font-size: 50px;
@@ -92,22 +97,37 @@ a.contact-social {
 @media only screen and (max-width: 900px) {
   .contact-flex {
     flex-direction: column;
-    gap: 40px;
+    gap: 18px;
   }
   .contact-flex p {
     margin-bottom: 0px;
+    max-width: none;
   }
   .contact-flex h4 {
-    margin-top: 20px;
+    margin-top: 8px;
   }
   .contact-section {
-    margin-top: 28px;
-    padding-bottom: 28px;
+    margin-top: 22px;
+    padding-bottom: 22px;
   }
   .contact-container {
     width: calc(100% - 25px);
   }
   .contact-box {
     min-height: auto;
+    padding: 20px;
+    border-radius: 20px;
+  }
+  .contact-section h3 {
+    font-size: 36px;
+    margin-bottom: 18px;
+  }
+  .contact-box h2 {
+    font-size: 18px;
+    line-height: 1.45;
+  }
+  a.contact-social {
+    font-size: 18px;
+    line-height: 1.5;
   }
 }

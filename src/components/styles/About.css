@@ -147,7 +147,26 @@
 }
 @media only screen and (max-width: 767px) {
   .about-section {
-    gap: 20px;
+    gap: 16px;
+    width: calc(100% - 24px);
+    padding: 20px 0 6px;
+    align-items: flex-start;
+  }
+  .about-me {
+    width: 100%;
+    max-width: none;
+    padding: 0;
+  }
+  .about-me h3 {
+    font-size: 20px;
+    letter-spacing: 0.22em;
+    margin: 0 0 14px;
+  }
+  .about-me p {
+    margin: 0;
+    font-size: 18px;
+    line-height: 1.65;
+    font-weight: 500;
   }
 }
 @media only screen and (min-width: 1950px) {

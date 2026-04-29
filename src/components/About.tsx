@@ -19,7 +19,7 @@ const About = () => {
       <div className="about-me">
         <h3 className="title">About Me</h3>
         <p className="para">
-          MUHTASIM MUIZ is a Web3 builder and researcher exploring how
+          I am a Web3 builder and researcher exploring how
           blockchain, privacy tech, and DeFi can create stronger digital trust.
           I care about building products that feel modern, resilient, and
           genuinely useful in a decentralized world.

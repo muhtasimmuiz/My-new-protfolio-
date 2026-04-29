@@ -60,7 +60,7 @@
   display: flex;
   flex-direction: column;
   gap: 18px;
-  padding-top: 74px;
+  padding-top: 146px;
   padding-left: clamp(20px, 4vw, 72px);
   will-change: transform;
 }
@@ -68,6 +68,15 @@
   margin: 0;
   font-size: 11px;
   font-weight: 600;
+  position: absolute;
+  top: 24px;
+  left: clamp(20px, 4vw, 72px);
+  z-index: 8;
+  width: max-content;
+  max-width: min(100%, 420px);
+  line-height: 1.2;
+  text-align: left;
+  pointer-events: none;
 }
 .landing-summary {
   margin: 0;
@@ -546,6 +555,11 @@ h2.landing-info-h2 {
     padding-left: 0;
     gap: 14px;
   }
+  .landing-kicker {
+    top: 10px;
+    left: 0;
+    max-width: calc(100% - 16px);
+  }
   .landing-summary {
     font-size: 15px;
     line-height: 1.7;
@@ -591,7 +605,7 @@ h2.landing-info-h2 {
     gap: 28px;
   }
   .landing-copy {
-    padding-top: 56px;
+    padding-top: 132px;
   }
   .landing-kicker {
     font-size: 12px;
@@ -611,9 +625,12 @@ h2.landing-info-h2 {
     gap: 48px;
   }
   .landing-copy {
-    padding-top: 24px;
+    padding-top: 126px;
     max-width: 620px;
     padding-left: clamp(48px, 6vw, 120px);
+  }
+  .landing-kicker {
+    left: clamp(48px, 6vw, 120px);
   }
 }
 @media screen and (min-width: 1200px) {
