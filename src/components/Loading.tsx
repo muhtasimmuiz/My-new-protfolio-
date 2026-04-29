@@ -28,8 +28,13 @@ const Loading = ({ percent }: { percent: number }) => {
     }, 950);
 
     const completeTimer = window.setTimeout(() => {
-      document.body.style.overflowY = "auto";
-      setIsLoading(false);
+      import("./utils/initialFX").then((module) => {
+        if (module.initialFX) {
+          module.initialFX();
+        }
+        document.body.style.overflowY = "auto";
+        setIsLoading(false);
+      });
     }, 1700);
 
     return () => {
