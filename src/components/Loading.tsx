@@ -14,20 +14,29 @@ const Loading = ({ percent }: { percent: number }) => {
     const welcomeTimer = window.setTimeout(() => {
       setPhase("welcome");
     }, 320);
-    const exitTimer = window.setTimeout(() => {
-      setPhase("exit");
-    }, 1300);
-    const completeTimer = window.setTimeout(() => {
-      document.body.style.overflowY = "auto";
-      setIsLoading(false);
-    }, 2050);
 
     return () => {
       window.clearTimeout(welcomeTimer);
+    };
+  }, [percent, phase]);
+
+  useEffect(() => {
+    if (phase !== "welcome") return;
+
+    const exitTimer = window.setTimeout(() => {
+      setPhase("exit");
+    }, 950);
+
+    const completeTimer = window.setTimeout(() => {
+      document.body.style.overflowY = "auto";
+      setIsLoading(false);
+    }, 1700);
+
+    return () => {
       window.clearTimeout(exitTimer);
       window.clearTimeout(completeTimer);
     };
-  }, [percent, phase, setIsLoading]);
+  }, [phase, setIsLoading]);
 
   useEffect(() => {
     document.body.style.overflowY = "hidden";
