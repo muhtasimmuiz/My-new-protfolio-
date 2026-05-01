@@ -11,10 +11,7 @@ const serviceCards = [
     tags: [
       "Web3 products",
       "Frontend systems",
-      "React",
-      "TypeScript",
       "UX flows",
-      "Dashboards",
       "Research-to-build",
     ],
   },
@@ -27,9 +24,6 @@ const serviceCards = [
       "Blockchain",
       "Privacy tech",
       "DeFi",
-      "Protocol analysis",
-      "Threat models",
-      "Trust systems",
       "Experimentation",
     ],
   },
@@ -68,6 +62,18 @@ const WhatIDo = () => {
         </h2>
       </div>
       <div className="what-box">
+        <div className="what-visual-wrap">
+          <div className="what-visual-orbit"></div>
+          <div className="what-visual-glow what-visual-glow-left"></div>
+          <div className="what-visual-glow what-visual-glow-right"></div>
+          <div className="what-visual-card">
+            <img
+              src="/images/whatido-visual.png"
+              alt="Muhtasim working at a coding desk"
+              className="what-visual-image"
+            />
+          </div>
+        </div>
         <div className="what-box-in">
           <div className="what-border2">
             <svg width="100%">
@@ -170,18 +176,6 @@ const WhatIDo = () => {
               </div>
               <div className="what-arrow"></div>
             </div>
-          </div>
-        </div>
-        <div className="what-visual-wrap">
-          <div className="what-visual-orbit"></div>
-          <div className="what-visual-glow what-visual-glow-left"></div>
-          <div className="what-visual-glow what-visual-glow-right"></div>
-          <div className="what-visual-card">
-            <img
-              src="/images/whatido-visual.png"
-              alt="Muhtasim working at a coding desk"
-              className="what-visual-image"
-            />
           </div>
         </div>
       </div>

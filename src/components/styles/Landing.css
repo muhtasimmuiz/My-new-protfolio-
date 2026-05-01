@@ -548,7 +548,7 @@ h2.landing-info-h2 {
   }
   .landing-container {
     height: auto;
-    gap: 20px;
+    gap: 14px;
   }
   .landing-copy {
     padding-top: 0;
@@ -556,9 +556,18 @@ h2.landing-info-h2 {
     gap: 14px;
   }
   .landing-kicker {
-    top: 10px;
-    left: 0;
-    max-width: calc(100% - 16px);
+    position: relative;
+    top: auto;
+    left: auto;
+    margin: 0 0 4px;
+    max-width: 100%;
+    font-size: 10px;
+    line-height: 1.45;
+    letter-spacing: 0.12em;
+  }
+  .landing-intro h2 {
+    font-size: 16px;
+    line-height: 1.15;
   }
   .landing-summary {
     font-size: 15px;
